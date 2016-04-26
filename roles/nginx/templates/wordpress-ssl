@@ -1,6 +1,6 @@
 server {
 	listen 80;
-	server_name {{ server_hostname }} {{ dev_server_hostname }};
+	server_name {{ server_hostname }};
 	return 301 https://{{ server_hostname }}$request_uri;
 }
 
@@ -23,7 +23,7 @@ server {
 	ssl_stapling on;
 	ssl_stapling_verify on;
 
-	server_name  {{ server_hostname }} {{ dev_server_hostname }};
+	server_name  {{ server_hostname }};
 	root /var/www/html/wordpress/;
 
 	client_max_body_size 64M;
